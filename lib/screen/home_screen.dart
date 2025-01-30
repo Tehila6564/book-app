@@ -1,28 +1,27 @@
 import 'package:books_app/screen/book_detail.dart';
 import 'package:books_app/screen/cart_screen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../Models/model.dart';
 
-class homeScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   final VoidCallback toggleTheme;
   final bool isDarkMode;
 
-  homeScreen({required this.toggleTheme, required this.isDarkMode});
+  const HomeScreen(
+      {super.key, required this.toggleTheme, required this.isDarkMode});
   _homeScreenState createState() => _homeScreenState();
 }
 
-class _homeScreenState extends State<homeScreen> {
+class _homeScreenState extends State<HomeScreen> {
   List<Book> displayBooks = books;
   TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Book Store"),
+        title: const Text("Book Store"),
         centerTitle: true,
         actions: [
           IconButton(
@@ -43,7 +42,7 @@ class _homeScreenState extends State<homeScreen> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,18 +55,18 @@ class _homeScreenState extends State<homeScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: const Icon(Icons.search),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               _buildSectionTitle("Books collection", widget.isDarkMode),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               _buildBookSlider(displayBooks),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               _buildSectionTitle("More books", widget.isDarkMode),
@@ -129,18 +128,18 @@ class _homeScreenState extends State<homeScreen> {
                 left: 0,
                 right: 0,
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.black54,
                     borderRadius: BorderRadius.vertical(
                       bottom: Radius.circular(15),
                     ),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
                     book.title,
                     textAlign: TextAlign.center,
                     maxLines: 1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,

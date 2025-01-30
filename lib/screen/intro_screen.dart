@@ -37,7 +37,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => homeScreen(
+                    builder: (context) => HomeScreen(
                       isDarkMode: widget.isDarkMode,
                       toggleTheme: widget.toggleTheme,
                     ),
